@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       //   print(retrievedUser);
                       //   if (retrievedUser != null) {
                       Navigator.of(context)
-                          .pushReplacementNamed(PaketOverviewScreen.routeName);
+                          .pushNamed(PaketOverviewScreen.routeName);
                       //   }
                       // }
                       setState(() {

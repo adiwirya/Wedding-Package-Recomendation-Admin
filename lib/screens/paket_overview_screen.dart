@@ -23,34 +23,43 @@ class PaketOverviewScreen extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Column(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                      child: Image.network(
-                        'https://images.weddingku.com/images/upload/store/product/big/638-hlco2sree8g0.jpg',
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: 250,
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        child: Image.network(
+                          'https://images.weddingku.com/images/upload/store/product/big/638-hlco2sree8g0.jpg',
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 250,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
                         children: [
-                          Text(
-                            'Paket 1',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'Rp. 1.000.000',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                          Flexible(
+                            flex: 50,
+                            child: Expanded(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Paket 1',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Rp.1.000.000',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],

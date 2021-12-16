@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: OverlaySupport.global(
         child: MaterialApp(
           title: 'Admin App',
-          home: PaketOverviewScreen(),
+          home: LoginScreen(),
           routes: {
             AddScreen.routeName: (ctx) => AddScreen(),
             PaketOverviewScreen.routeName: (ctx) => PaketOverviewScreen(),
