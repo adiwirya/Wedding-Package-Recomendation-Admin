@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 
 import 'screens/add_screen.dart';
 import 'screens/login_screen.dart';
@@ -21,8 +23,17 @@ class MyApp extends StatelessWidget {
       ],
       child: OverlaySupport.global(
         child: MaterialApp(
+          builder: (context, widget) => ResponsiveWrapper.builder(
+            ClampingScrollWrapper.builder(context, widget!),
+            breakpoints: [
+              ResponsiveBreakpoint.resize(480, name: MOBILE),
+              ResponsiveBreakpoint.autoScale(800, name: TABLET),
+              ResponsiveBreakpoint.autoScale(1000, name: DESKTOP),
+            ],
+          ),
           title: 'Admin App',
           home: LoginScreen(),
+          themeMode: ThemeMode.light,
           routes: {
             AddScreen.routeName: (ctx) => AddScreen(),
             PaketOverviewScreen.routeName: (ctx) => PaketOverviewScreen(),
