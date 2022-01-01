@@ -1,18 +1,20 @@
-import 'package:admin_app/screens/register_screen.dart';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../screens/paket_overview_screen.dart';
+
+import '../screens/login_screen.dart';
 import '../providers/user.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const routeName = '/';
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  static const routeName = '/register';
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _form = GlobalKey<FormState>();
   final _passwordFocus = FocusNode();
 
@@ -23,6 +25,12 @@ class _LoginScreenState extends State<LoginScreen> {
     password: '',
   );
 
+  @override
+  void dispose() {
+    _passwordFocus.dispose();
+    super.dispose();
+  }
+
   Future<void> _saveForm() async {
     final isValid = _form.currentState!.validate();
     if (!isValid) {
@@ -30,23 +38,18 @@ class _LoginScreenState extends State<LoginScreen> {
     }
     _form.currentState?.save();
     final message =
-        await Provider.of<Users>(context, listen: false).login(_editedUser);
+        await Provider.of<Users>(context, listen: false).register(_editedUser);
+    // print(message);
     if (message == null) {
       return;
-    } else if (message == "Login Successfully") {
-      Navigator.of(context).pushReplacementNamed(PaketOverviewScreen.routeName);
+    } else if (message == "User Created Successfully") {
+      Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(message),
         duration: const Duration(seconds: 2),
       ));
     }
-  }
-
-   @override
-  void dispose() {
-    _passwordFocus.dispose();
-    super.dispose();
   }
 
   @override
@@ -157,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: const Padding(
                                       padding: EdgeInsets.symmetric(vertical: 10),
                                       child: Text(
-                                        'Login',
+                                        'Register',
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white,
@@ -172,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Don\'t have an account?',
+                            'Already have an account?',
                             style: TextStyle(
                               fontSize: 16,
                             ),
@@ -180,11 +183,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           GestureDetector(
                             onTap: () {
                               Navigator.of(context).pushReplacementNamed(
-                                RegisterScreen.routeName,
+                                LoginScreen.routeName,
                               );
                             },
                             child: Text(
-                              "  Sign Up",
+                              "  Sign in",
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.bold,

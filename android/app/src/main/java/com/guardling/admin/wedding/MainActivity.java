@@ -1,4 +1,4 @@
-package com.example.admin_app;
+package com.guardling.admin.wedding;
 
 import io.flutter.embedding.android.FlutterActivity;
 

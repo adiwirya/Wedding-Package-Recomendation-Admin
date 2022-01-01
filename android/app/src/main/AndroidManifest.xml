@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.admin_app">
+    package="com.guardling.admin.wedding">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="admin_app"
+        android:label="Admin - Wedding Package Recomendation"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
