@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a email.';
+                            return 'Silahkan masukkan email.';
                           }
                           return null;
                         },
@@ -121,7 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a password.';
+                            return 'Silahkan masukkan password.';
                           }
                           return null;
                         },
@@ -136,14 +136,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       isLoading
                           ? const CircularProgressIndicator.adaptive()
                           : Row(
-                            children: [
-                              Expanded(
-                                child: ElevatedButton(
+                              children: [
+                                Expanded(
+                                  child: ElevatedButton(
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(20.0),
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
                                         ),
                                       ),
                                       elevation: MaterialStateProperty.all(3),
@@ -158,9 +159,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       });
                                     },
                                     child: const Padding(
-                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
                                       child: Text(
-                                        'Register',
+                                        'Daftar',
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white,
@@ -168,14 +170,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       ),
                                     ),
                                   ),
-                              ),
-                            ],
-                          ),
+                                ),
+                              ],
+                            ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Already have an account?',
+                            'Sudah punya akun?',
                             style: TextStyle(
                               fontSize: 16,
                             ),
@@ -187,7 +189,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               );
                             },
                             child: Text(
-                              "  Sign in",
+                              "  Masuk disini",
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.bold,

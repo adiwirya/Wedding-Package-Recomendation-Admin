@@ -219,7 +219,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Edit Paket'),
+          title: const Text('Ubah Paket'),
           actions: [
             IconButton(
               icon: const Icon(Icons.save),
@@ -242,7 +242,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           initialValue: _initValues['nama'],
                           decoration: const InputDecoration(
                             labelText: 'Nama Paket',
-                            hintText: 'eg. Wedding Package A',
+                            hintText: 'cth. Paket A',
                           ),
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (_) {
@@ -250,7 +250,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a nama.';
+                              return 'Silahkan masukkan nama.';
                             }
                             return null;
                           },
@@ -290,7 +290,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           focusNode: _hargaFocus,
                           decoration: const InputDecoration(
                             labelText: 'Harga Paket',
-                            hintText: 'without Rp and comma',
+                            hintText: 'Tanpa Rp dan koma',
                           ),
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -300,7 +300,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a harga.';
+                              return 'Silahkan masukkan harga.';
                             }
                             return null;
                           },
@@ -339,7 +339,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           initialValue: _initValues['venueType'],
                           decoration: const InputDecoration(
                             labelText: 'Tipe Venue',
-                            hintText: 'Eg. Ballroon, Chappel, etc',
+                            hintText: 'cth. Ballroon, Chappel, etc',
                           ),
                           focusNode: _tipeVenueFocus,
                           textInputAction: TextInputAction.next,
@@ -348,7 +348,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a tipe venue.';
+                              return 'Silahkan masukkan tipe venue.';
                             }
                             return null;
                           },
@@ -394,7 +394,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a lokasi.';
+                              return 'Silahkan masukkan lokasi.';
                             }
                             return null;
                           },
@@ -432,7 +432,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['tamu'],
                           decoration: const InputDecoration(
-                              labelText: 'Jumlah Tamu', hintText: 'Pax'),
+                              labelText: 'Jumlah Tamu', hintText: 'Orang'),
                           focusNode: _tamuFocus,
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (_) {
@@ -440,7 +440,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a tamu.';
+                              return 'Silahkan masukkan jumlah tamu.';
                             }
                             return null;
                           },
@@ -479,7 +479,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['image'],
                           decoration: const InputDecoration(
-                            labelText: 'Image Url',
+                            labelText: 'Link Foto',
                           ),
                           focusNode: _imageFocus,
                           textInputAction: TextInputAction.next,
@@ -488,7 +488,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a imageurl.';
+                              return 'Silahkan masukkan link foto.';
                             }
                             return null;
                           },
@@ -526,7 +526,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['crew'],
                           decoration: const InputDecoration(
-                              labelText: 'Crew', hintText: 'Person'),
+                              labelText: 'Jumlah Crew', hintText: 'Orang'),
                           keyboardType: TextInputType.number,
                           focusNode: _crewFocus,
                           textInputAction: TextInputAction.next,
@@ -535,7 +535,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a crew.';
+                              return 'Silahkan masukkan jumlah crew.';
                             }
                             return null;
                           },
@@ -573,7 +573,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['cake'],
                           decoration: const InputDecoration(
-                              labelText: 'Wedding Cake', hintText: 'Tiers'),
+                              labelText: 'Kue Pengantin',
+                              hintText: 'Jumlah Tingkat'),
                           keyboardType: TextInputType.number,
                           focusNode: _cakeFocus,
                           textInputAction: TextInputAction.next,
@@ -582,7 +583,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a cake.';
+                              return 'Silahkan masukkan cake.';
                             }
                             return null;
                           },
@@ -620,8 +621,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['car'],
                           decoration: const InputDecoration(
-                              labelText: 'Wedding Car',
-                              hintText: 'E.g 1 if available'),
+                              labelText: 'Mobil Pengantin',
+                              hintText: '1 jika terdapat, 0 jika tidak'),
                           keyboardType: TextInputType.number,
                           focusNode: _carFocus,
                           textInputAction: TextInputAction.next,
@@ -630,7 +631,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a car.';
+                              return 'Silahkan masukkan angka 1/0.';
                             }
                             return null;
                           },
@@ -675,13 +676,13 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 initialValue: _initValues['mc'],
                                 decoration: const InputDecoration(
                                     labelText: 'Master Of Ceremony',
-                                    hintText: 'Person'),
+                                    hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _mcFoucs,
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a mc.';
+                                    return 'Silahkan masukkan MC.';
                                   }
                                   return null;
                                 },
@@ -723,7 +724,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['singer'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Singer', hintText: 'Person'),
+                                    labelText: 'Penyanyi', hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 focusNode: _singerFocus,
                                 onFieldSubmitted: (_) {
@@ -732,7 +733,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a singer.';
+                                    return 'Silahkan masukkan penyanyi.';
                                   }
                                   return null;
                                 },
@@ -774,8 +775,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['ins'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Instrument',
-                                    hintText: 'Person'),
+                                    labelText: 'Jumlah Pemain Musik',
+                                    hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 focusNode: _insFocus,
                                 onFieldSubmitted: (_) {
@@ -784,7 +785,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a instrument.';
+                                    return 'Silahkan masukkan jumlah pemain musik.';
                                   }
                                   return null;
                                 },
@@ -831,8 +832,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['photo'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Photographer',
-                                    hintText: 'Person'),
+                                    labelText: 'Fotografer', hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _photographerFocus,
@@ -842,7 +842,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a photo.';
+                                    return 'Silahkan masukkan fotografer.';
                                   }
                                   return null;
                                 },
@@ -885,7 +885,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 initialValue: _initValues['video'],
                                 decoration: const InputDecoration(
                                     labelText: 'Videographer',
-                                    hintText: 'Person'),
+                                    hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 focusNode: _videographerFocus,
                                 onFieldSubmitted: (_) {
@@ -894,7 +894,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a videographer.';
+                                    return 'Silahkan masukkan videographer.';
                                   }
                                   return null;
                                 },
@@ -936,8 +936,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['hour'],
                                 decoration: const InputDecoration(
-                                  labelText: 'Duration',
-                                  hintText: 'Hours',
+                                  labelText: 'Durasi',
+                                  hintText: 'Dalam jam',
                                 ),
                                 keyboardType: TextInputType.number,
                                 focusNode: _hourFocus,
@@ -947,7 +947,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a duration.';
+                                    return 'Silahkan masukkan durasi.';
                                   }
                                   return null;
                                 },
@@ -994,8 +994,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['stage'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Stage Decoration',
-                                    hintText: 'E.g 1 if available'),
+                                    labelText: 'Dekorasi Panggung',
+                                    hintText: '1 jika terdapat, 0 jika tidak'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _stageFocus,
@@ -1005,7 +1005,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a stage.';
+                                    return 'Silahkan masukkan dekorasi panggung.';
                                   }
                                   return null;
                                 },
@@ -1047,8 +1047,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['gate'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Wedding Gate',
-                                    hintText: 'E.g 1 if available'),
+                                    labelText: 'Gerbang Pernikahan',
+                                    hintText: '1 jika terdapat, 0 jika tidak'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _gateFocus,
@@ -1058,7 +1058,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a gate.';
+                                    return 'Silahkan masukkan gerbang pernikahan.';
                                   }
                                   return null;
                                 },
@@ -1100,8 +1100,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['table'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Table Decoration',
-                                    hintText: 'E.g 1 if available'),
+                                    labelText: 'Dekorasi Meja',
+                                    hintText: '1 jika terdapat, 0 jika tidak'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _tableFocus,
@@ -1111,7 +1111,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a table.';
+                                    return 'Silahkan masukkan dekorasi meja.';
                                   }
                                   return null;
                                 },
@@ -1158,8 +1158,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['mua'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Make Up Artist',
-                                    hintText: 'Person'),
+                                    labelText: 'MUA', hintText: 'Orang'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _muaFocus,
@@ -1169,7 +1168,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a mua.';
+                                    return 'Silahkan masukkan mua.';
                                   }
                                   return null;
                                 },
@@ -1211,8 +1210,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['groom'],
                                 decoration: const InputDecoration(
-                                  labelText: 'Groom Suit',
-                                  hintText: 'E.g 1 if available',
+                                  labelText: 'Jas Pengantin Pria',
+                                  hintText: '1 jika terdapat, 0 jika tidak',
                                 ),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
@@ -1223,7 +1222,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a groom.';
+                                    return 'Silahkan masukkan jas pengantin pria.';
                                   }
                                   return null;
                                 },
@@ -1265,8 +1264,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                               child: TextFormField(
                                 initialValue: _initValues['bride'],
                                 decoration: const InputDecoration(
-                                    labelText: 'Bride Suit',
-                                    hintText: 'E.g 1 if available'),
+                                    labelText: 'Gaun Pengantin Wanita',
+                                    hintText: '1 jika terdapat, 0 jika tidak'),
                                 keyboardType: TextInputType.number,
                                 textInputAction: TextInputAction.next,
                                 focusNode: _brideFocus,
@@ -1276,7 +1275,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                                 },
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
-                                    return 'Please enter a bride.';
+                                    return 'Silahkan masukkan gaun pengantin wanita.';
                                   }
                                   return null;
                                 },
@@ -1318,7 +1317,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           initialValue: _initValues['live'],
                           decoration: const InputDecoration(
                               labelText: 'Live Stream',
-                              hintText: 'Eg. 1 if available'),
+                              hintText: '1 jika terdapat, 0 jika tidak'),
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
                           focusNode: _liveFocus,
@@ -1327,7 +1326,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a live.';
+                              return 'Silahkan masukkan live.';
                             }
                             return null;
                           },
@@ -1365,8 +1364,8 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['venue'],
                           decoration: const InputDecoration(
-                            labelText: 'Venue Duration',
-                            hintText: 'Hours',
+                            labelText: 'Durasi Lokasi',
+                            hintText: 'Jam',
                           ),
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -1376,7 +1375,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a venue.';
+                              return 'Silahkan masukkan Durasi.';
                             }
                             return null;
                           },
@@ -1414,7 +1413,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                         TextFormField(
                           initialValue: _initValues['detail'],
                           decoration: const InputDecoration(
-                            labelText: 'Description',
+                            labelText: 'Detail Paket',
                           ),
                           maxLines: 3,
                           keyboardType: TextInputType.multiline,
@@ -1422,7 +1421,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                           focusNode: _detailFocus,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter a detail.';
+                              return 'Silahkan masukkan detail paket.';
                             }
                             return null;
                           },
@@ -1463,7 +1462,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
                             Expanded(
                                 child: ElevatedButton(
                                     onPressed: _saveForm,
-                                    child: const Text('Save'))),
+                                    child: const Text('Simpan'))),
                           ],
                         ),
                       ],

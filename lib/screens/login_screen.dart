@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     child: const Padding(
                                       padding: EdgeInsets.symmetric(vertical: 10),
                                       child: Text(
-                                        'Login',
+                                        'Masuk',
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.white,
@@ -172,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Don\'t have an account?',
+                            'Belum Punya Akun? ',
                             style: TextStyle(
                               fontSize: 16,
                             ),
@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               );
                             },
                             child: Text(
-                              "  Sign Up",
+                              "  Daftar Disini",
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.bold,

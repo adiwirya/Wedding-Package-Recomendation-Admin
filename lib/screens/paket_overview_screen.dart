@@ -38,7 +38,7 @@ class _PaketOverviewScreenState extends State<PaketOverviewScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('All Package'),
+          title: const Text('Semua Paket'),
           actions: [
             IconButton(
               icon: const Icon(Icons.add),
