@@ -17,9 +17,13 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _form = GlobalKey<FormState>();
   final _passwordFocus = FocusNode();
+  final _conpasswordFocus = FocusNode();
+  final TextEditingController _pass = TextEditingController();
+  final TextEditingController _confirmPass = TextEditingController();
 
   bool isLoading = false;
   var _isObscure = true;
+  var _isObscure1 = true;
   var _editedUser = User(
     email: '',
     password: '',
@@ -42,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     // print(message);
     if (message == null) {
       return;
-    } else if (message == "User Created Successfully") {
+    } else if (message == "User Berhasil Dibuat") {
       Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -101,6 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         },
                       ),
                       TextFormField(
+                        controller: _pass,
                         obscureText: _isObscure,
                         decoration: InputDecoration(
                           labelText: 'Password',
@@ -115,13 +120,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }),
                         ),
                         focusNode: _passwordFocus,
+                        onFieldSubmitted: (_) {
+                          FocusScope.of(context)
+                              .requestFocus(_conpasswordFocus);
+                        },
+                        keyboardType: TextInputType.text,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Silahkan masukkan password.';
+                          }
+                          return null;
+                        },
+                        onSaved: (value) {
+                          _editedUser = User(
+                            email: _editedUser.email,
+                            password: value!,
+                          );
+                        },
+                      ),
+                      TextFormField(
+                        obscureText: _isObscure1,
+                        decoration: InputDecoration(
+                          labelText: 'Confirm Password',
+                          suffixIcon: IconButton(
+                              icon: Icon(_isObscure1
+                                  ? Icons.visibility_off
+                                  : Icons.visibility),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure1 = !_isObscure1;
+                                });
+                              }),
+                        ),
+                        focusNode: _conpasswordFocus,
                         keyboardType: TextInputType.text,
                         onFieldSubmitted: (_) {
                           _saveForm();
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Silahkan masukkan password.';
+                            return 'Silahkan masukkan confirm password.';
+                          }
+                          if (value != _pass.text) {
+                            return 'Password tidak sama.';
                           }
                           return null;
                         },

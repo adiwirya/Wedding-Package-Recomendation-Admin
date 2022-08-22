@@ -141,7 +141,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
           .updateItem(_editedpaket.id, _editedpaket);
       if (message == null) {
         return;
-      } else if (message == "Data Updated") {
+      } else if (message == "Data Telah Diupdate") {
         Navigator.of(context).pushNamedAndRemoveUntil(
             PaketOverviewScreen.routeName, (route) => false);
       } else {
@@ -155,7 +155,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
           .addItem(_editedpaket);
       if (message == null) {
         return;
-      } else if (message == "Data Created") {
+      } else if (message == "Data Telah Ditambahkan") {
         Navigator.of(context).pushNamedAndRemoveUntil(
             PaketOverviewScreen.routeName, (route) => false);
       } else {
@@ -219,7 +219,7 @@ class _EditPaketScreenState extends State<EditPaketScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Ubah Paket'),
+          title: _editedpaket.id != '' ? const Text('Ubah Paket') : const Text('Tambah Paket'),
           actions: [
             IconButton(
               icon: const Icon(Icons.save),

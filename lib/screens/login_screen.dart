@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
         await Provider.of<Users>(context, listen: false).login(_editedUser);
     if (message == null) {
       return;
-    } else if (message == "Login Successfully") {
+    } else if (message == "Login Berhasil") {
       Navigator.of(context).pushReplacementNamed(PaketOverviewScreen.routeName);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-   @override
+  @override
   void dispose() {
     _passwordFocus.dispose();
     super.dispose();
@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a email.';
+                            return 'Silahkan masukkan email';
                           }
                           return null;
                         },
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a password.';
+                            return 'Silahkan masukkan password';
                           }
                           return null;
                         },
@@ -133,14 +133,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       isLoading
                           ? const CircularProgressIndicator.adaptive()
                           : Row(
-                            children: [
-                              Expanded(
-                                child: ElevatedButton(
+                              children: [
+                                Expanded(
+                                  child: ElevatedButton(
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(20.0),
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
                                         ),
                                       ),
                                       elevation: MaterialStateProperty.all(3),
@@ -155,7 +156,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       });
                                     },
                                     child: const Padding(
-                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
                                       child: Text(
                                         'Masuk',
                                         style: TextStyle(
@@ -165,9 +167,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                   ),
-                              ),
-                            ],
-                          ),
+                                ),
+                              ],
+                            ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
